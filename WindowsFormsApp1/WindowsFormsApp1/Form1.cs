@@ -36,11 +36,19 @@ namespace WindowsFormsApp1
 
         private void button13_Click(object sender, EventArgs e)
         {
-
-            Button b = (Button)sender;
-            action = b.Text;
-            number1 = textBox1.Text;
-            textBox1.Text = "";
+            if (textBox1.Text == "0"| textBox1.Text == "")
+            {
+                Button b = (Button)sender;
+                textBox1.Text = "";
+                textBox1.Text = textBox1.Text + b.Text;
+            }
+            else
+            {
+                Button b = (Button)sender;
+                action = b.Text;
+                number1 = textBox1.Text;
+                textBox1.Text = "";
+            }
 
         }
 
@@ -51,30 +59,19 @@ namespace WindowsFormsApp1
 
         private void button11_Click(object sender, EventArgs e)
         {
-            if (action == "+")
-                textBox1.Text = (Convert.ToDouble(textBox1.Text) + Convert.ToDouble(number1)).ToString();
-            if (action == "-")
-                textBox1.Text = (Convert.ToDouble(number1) - Convert.ToDouble(textBox1.Text)).ToString();
-            if (action == "*")
-                textBox1.Text = (Convert.ToDouble(textBox1.Text) * Convert.ToDouble(number1)).ToString();
-            if (action == "/")
-                textBox1.Text = (Convert.ToDouble(number1) + Convert.ToDouble(textBox1.Text)).ToString();
-
+                if (action == "+")
+                    textBox1.Text = (Convert.ToDouble(textBox1.Text) + Convert.ToDouble(number1)).ToString();
+                if (action == "-")
+                    textBox1.Text = (Convert.ToDouble(number1) - Convert.ToDouble(textBox1.Text)).ToString();
+                if (action == "*")
+                    textBox1.Text = (Convert.ToDouble(textBox1.Text) * Convert.ToDouble(number1)).ToString();
+                if (action == "/")
+                    textBox1.Text = (Convert.ToDouble(number1) / Convert.ToDouble(textBox1.Text)).ToString();
             action = "";
 
         }
 
 
-
-        private void button12_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -87,11 +84,6 @@ namespace WindowsFormsApp1
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button15_Click(object sender, EventArgs e)
         {
 
         }
